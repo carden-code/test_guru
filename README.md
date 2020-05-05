@@ -22,6 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * Список сущностей:
-- Вопрос
-- Ответ
+- Тест
 - Пользователь
+- Администратор
