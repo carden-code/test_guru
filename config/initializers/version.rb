@@ -1,5 +1,10 @@
+#
 module TestGuru
-  class Application < Rails::Application
+  #
+  class Version
     VERSION = '0.1.0'
+    def version
+      puts VERSION
+    end
   end
 end
