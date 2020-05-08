@@ -2,8 +2,10 @@
 
 one:
   body: MyString
-  correct: MyString
+  correct: false
+  questions: one
 
 two:
   body: MyString
-  correct: MyString
+  correct: false
+  questions: two
