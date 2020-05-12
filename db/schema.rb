@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_205044) do
+ActiveRecord::Schema.define(version: 2020_05_12_202034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_205044) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "body", null: false
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_205044) do
   end
 
   create_table "tests", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.integer "level", default: 0
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -47,9 +47,18 @@ ActiveRecord::Schema.define(version: 2020_05_08_205044) do
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
+  create_table "tests_users", force: :cascade do |t|
+    t.bigint "test_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_tests_users_on_test_id"
+    t.index ["user_id"], name: "index_tests_users_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
+    t.string "name", null: false
+    t.integer "age", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,4 +66,6 @@ ActiveRecord::Schema.define(version: 2020_05_08_205044) do
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
+  add_foreign_key "tests_users", "tests"
+  add_foreign_key "tests_users", "users"
 end

@@ -1,3 +1,7 @@
 class Test < ApplicationRecord
-  belongs_to :category
+  has_many :questions
+
+  # def self.array_name_tests(category)
+  #   #categories.where(name: category).order(name: :desc)
+  # end
 end
