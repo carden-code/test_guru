@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_05_15_203226) do
   create_table "tests_users", force: :cascade do |t|
     t.bigint "test_id", null: false
     t.bigint "user_id", null: false
-    t.integer "progress", default: 0
     t.index ["test_id"], name: "index_tests_users_on_test_id"
     t.index ["user_id"], name: "index_tests_users_on_user_id"
   end
