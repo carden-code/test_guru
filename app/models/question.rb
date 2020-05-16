@@ -4,5 +4,4 @@ class Question < ApplicationRecord
 
   # Атрибут body не может иметь пустое значение.
   validates :body, presence: true
-  validates :answers, presence: true
 end

@@ -7,18 +7,22 @@ class Test < ApplicationRecord
 
   # title и level не может быть пустой строкой и
   # не может иметь одинаковые названия.
-  validates_uniqueness_of :title, scope: :level
+  validates :title, uniqueness: { scope: :level }
 
   # Проверка валидности атрибута level на то,
-  # что level может быть только целым положительным числом.
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-
-  # Проверка валидности level на максимальное значение при создании объекта.
-  validate :validate_max_level, on: :create
+  # что level может быть только целым положительным числом меньше 10.
+  validates :level, numericality: { only_integer: true,
+                                    greater_than_or_equal_to: 0,
+                                    less_than_or_equal_to: 10 }
 
   # Возвращает отсортированный по убыванию массив названий всех Тестов у которых
   # Категория называется определённым образом.
-  scope :array_name_tests, ->(name) { joins(:category).where(categories: { name: name }).order(title: :desc).pluck(:title) }
+  def self.array_name_tests(name)
+    joins_category.where(categories: { name: name }).order(title: :desc).pluck(:title)
+  end
+
+  # Присоединяет таблицу categories
+  scope :joins_category, -> { joins(:category) }
 
   # Выбор тестов по уровню сложности:
   # easy - простой (нулевой или первый уровень),
@@ -29,10 +33,4 @@ class Test < ApplicationRecord
 
   # difficult - сложный (с пятого и выше).
   scope :difficult, -> { where(level: (5..)) }
-
-  private
-
-  def validate_max_level
-    errors.add(:level) if level.to_i > 10
-  end
 end
