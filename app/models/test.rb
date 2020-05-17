@@ -18,11 +18,11 @@ class Test < ApplicationRecord
   # Возвращает отсортированный по убыванию массив названий всех Тестов у которых
   # Категория называется определённым образом.
   def self.array_name_tests(name)
-    joins_category.where(categories: { name: name }).order(title: :desc).pluck(:title)
+    joins_category(name).order(title: :desc).pluck(:title)
   end
 
   # Присоединяет таблицу categories
-  scope :joins_category, -> { joins(:category) }
+  scope :joins_category, ->(name) { joins(:category).where(categories: { name: name }) }
 
   # Выбор тестов по уровню сложности:
   # easy - простой (нулевой или первый уровень),
