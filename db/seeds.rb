@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create([{ name: 'Slava', age: 30 },
-                    { name: 'Serg', age: 20 }])
+user = User.create([{ name: 'Slava', email: 'Slava@mail.ru' },
+                    { name: 'Serg', email: 'Serg@mail.ru' }])
 
 category = Category.create([{ name: :Biology },
                             { name: :Informatics },
@@ -15,9 +15,10 @@ category = Category.create([{ name: :Biology },
 test = Test.create([{ title: 'Higher plants', category: category[0], author: user[0] },
                     { title: 'Lower plants', category: category[0], author: user[0] },
                     { title: 'Vertebrate animals', category: category[0], author: user[0] },
-                    { title: 'Basic informatics', category: category[1], author: user[1] },
-                    { title: 'General informatics', category: category[1], author: user[1] },
-                    { title: 'Pascal programming basics', category: category[1], author: user[1] }])
+                    { title: 'Basic informatics', level: 2, category: category[1], author: user[1] },
+                    { title: 'General informatics', level: 2, category: category[1], author: user[1] },
+                    { title: 'Pascal programming basics', level: 4, category: category[1], author: user[1] }])
+
 question = Question.create([{ body: 'Сколько дней живут корневые волоски?',
                               test: test[0] },
                             { body: 'В клетках какой ткани происходят процессы фотосинтеза?',
@@ -36,6 +37,7 @@ question = Question.create([{ body: 'Сколько дней живут корн
                               test: test[2] },
                             { body: 'Какие млекопитающие плохо различают запахи?',
                               test: test[2] }])
+
 Answer.create([{ body: '10-20', question: question[0], correct: true },
                { body: '1-2', question: question[0], correct: false },
                { body: '2-8', question: question[0], correct: false },
@@ -63,3 +65,11 @@ Answer.create([{ body: '10-20', question: question[0], correct: true },
                { body: 'дельфины и киты', question: question[8], correct: true },
                { body: 'дельфин и корова', question: question[8], correct: false },
                { body: 'крот и змея', question: question[8], correct: false }])
+
+TestsUser.connection.execute("INSERT INTO tests_users VALUES
+  (1, #{test[0].id}, #{user[0].id}),
+  (2, #{test[2].id}, #{user[0].id}),
+  (3, #{test[4].id}, #{user[0].id}),
+  (4, #{test[1].id}, #{user[1].id}),
+  (5, #{test[3].id}, #{user[1].id}),
+  (6, #{test[5].id}, #{user[1].id});")
