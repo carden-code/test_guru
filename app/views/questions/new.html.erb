@@ -1,0 +1,15 @@
+<h1>Create New Question</h1>
+
+<%= form_for [@test, @question] do |f| %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%# line_3 - Для конкретного теста создаётся новый вопрос.
+    line_5 - Создаётся название поля ввода.
+    line_6 - Текст для атрибута вопроса
+    line_8 - Добавляет кнопку (отправить) %>
