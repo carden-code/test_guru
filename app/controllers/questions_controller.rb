@@ -7,7 +7,8 @@ class QuestionsController < ApplicationController
 
   # Посмотреть все вопросы у конкретного теста.
   def index
-    redirect_to @test
+    @questions = @test.questions
+    render plain: @questions.inspect
   end
 
   # Посмотреть конкретный вопрос у конкретного теста.
@@ -26,7 +27,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   # Удаляет вопрос у конкретного теста.
