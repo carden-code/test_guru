@@ -1,0 +1,17 @@
+<ul>
+  <% @test.questions.each do |question| %>
+    <li>
+      <%= question.body %>
+      <%= link_to 'Check', question %>
+      <%= link_to 'Delete', question, method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New queston', new_test_question_path(@test) %>
+
+<%# line_2 - Перебирает вопросы определённого теста и передаёт каждый вопрос в блок
+ line_4 - выводит тело вопроса
+ line_5 - Добавляет кнопку (посмотреть вопрос)
+ line_6 - Добавляет кнопку (Удалить вопрос)
+ line_11 - Добавляет кнопку создать новый вопрос для конкретно теста из (before_action) %>
