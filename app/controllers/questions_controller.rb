@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_question, only: %i[update edit show destroy]
 
   # Обрабатывает исключение в случает когда вопрос не был найден.
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
 
   # Посмотреть конкретный вопрос у конкретного теста.
   def show
-    render plain: @question.body
+    @question.body
   end
 
   # Создаст новый вопрос (с тектом из формы) для конкретного теста
@@ -28,6 +28,16 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.new
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(post_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   # Удаляет вопрос у конкретного теста.

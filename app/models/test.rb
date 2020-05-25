@@ -7,7 +7,7 @@ class Test < ApplicationRecord
 
   # title и level не может быть пустой строкой и
   # не может иметь одинаковые названия.
-  validates :title, uniqueness: { scope: :level }
+  validates :title, presence: true, uniqueness: { scope: :level }
 
   # Проверка валидности атрибута level на то,
   # что level может быть только целым положительным числом меньше 10.
@@ -32,5 +32,5 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: (2..4)) }
 
   # difficult - сложный (с пятого и выше).
-  scope :difficult, -> { where(level: (5..)) }
+  scope :hard, -> { where(level: (5..)) }
 end
