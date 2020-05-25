@@ -13,7 +13,7 @@
     <li>
       <%= question.body %>
       <%= link_to 'Check', question %>
-      <%= link_to 'Delete', question, method: :delete %>
+      <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
       <%= link_to 'Edit', edit_question_path(question) %>
     </li>
   <% end %>
