@@ -66,10 +66,10 @@ Answer.create([{ body: '10-20', question: question[0], correct: true },
                { body: 'дельфин и корова', question: question[8], correct: false },
                { body: 'крот и змея', question: question[8], correct: false }])
 
-TestsUser.connection.execute("INSERT INTO tests_users VALUES
-  (1, #{test[0].id}, #{user[0].id}),
-  (2, #{test[2].id}, #{user[0].id}),
-  (3, #{test[4].id}, #{user[0].id}),
-  (4, #{test[1].id}, #{user[1].id}),
-  (5, #{test[3].id}, #{user[1].id}),
-  (6, #{test[5].id}, #{user[1].id});")
+# TestPassage.connection.execute("INSERT INTO test_passages VALUES
+#   (1, #{user[0]}, #{test[0].id}, #{question[0]}),
+#   (2, #{user[0]}, #{test[2]}, #{question[0]}),
+#   (3, #{user[0]}, #{test[4]}, #{question[0]}),
+#   (4, #{user[1]}, #{test[1]}, #{question[0]}),
+#   (5, #{user[1]}, #{test[3]}, #{question[0]}),
+#   (6, #{user[1]}, #{test[5]}, #{question[0]});")

@@ -1,9 +1,9 @@
 class Test < ApplicationRecord
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :questions, dependent: :destroy
-  has_many :tests_users, dependent: :destroy
-  has_many :users, through: :tests_users
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
   # title и level не может быть пустой строкой и
   # не может иметь одинаковые названия.
