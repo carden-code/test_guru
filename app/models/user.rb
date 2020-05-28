@@ -13,6 +13,8 @@ class User < ApplicationRecord
     tests.where(level: level)
   end
 
+  # Метод test_passage принимает в виде параметра объект теста и возращает
+  # последний тест из таблицы test_passages соответствущий его id.
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
