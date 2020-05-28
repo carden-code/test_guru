@@ -5,12 +5,6 @@ class QuestionsController < ApplicationController
   # Обрабатывает исключение в случает когда вопрос не был найден.
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  # Посмотреть все вопросы у конкретного теста.
-  def index
-    @questions = @test.questions
-    render plain: @questions.inspect
-  end
-
   # Посмотреть конкретный вопрос у конкретного теста.
   def show
     @question.body
