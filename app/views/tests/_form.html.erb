@@ -2,8 +2,8 @@
   <%= render 'shared/errors', resource: @test %>
 
   <p>
-  <%= form.label :title %><br>
-  <%= form.text_field :title, id: :test_title %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :test_title %>
   </p><br>
 
   <p>
@@ -20,6 +20,8 @@
     <%= form.label :author_id %>:
     <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
   </p>
+
+
 
   <p><%= form.submit %></p>
 <% end %>
