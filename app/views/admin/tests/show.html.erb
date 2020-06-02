@@ -1,0 +1,30 @@
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= test_level(@test) %>
+</p>
+
+<ul>
+  <% @test.questions.each do |question| %>
+    <li>
+      <%= question.body %>
+      <%= link_to 'Check', admin_question_path(question) %>
+      <%= link_to 'Delete', admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_admin_question_path(question) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New queston', new_admin_test_question_path(@test) %><br />
+<%= link_to 'Edit', edit_admin_test_path(@test) %>
+<%= link_to 'Back', admin_tests_path %>
+
+<%# line_2 - Перебирает вопросы определённого теста и передаёт каждый вопрос в блок
+ line_4 - выводит тело вопроса
+ line_5 - Добавляет кнопку (посмотреть вопрос)
+ line_6 - Добавляет кнопку (Удалить вопрос)
+ line_11 - Добавляет кнопку создать новый вопрос для конкретно теста из (before_action) %>

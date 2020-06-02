@@ -10,15 +10,17 @@
   </head>
 
   <body>
-    <% if logget_in? %>
-      <p class="nav user">Welcome
-        <b><%= current_user.name %></b> Guru <br>
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.first_name %></b> Guru <br>
         <b><%= link_to 'Home Test Guru', tests_path %></b><br>
-        <b><%= link_to "Exit", exit_path,
+        <b><%= link_to "Exit", destroy_user_session_path,
                                method: :delete,
                                data: { confirm: 'Do you really want to leave?'} %></b>
       </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
 
     <%= yield %>
 
