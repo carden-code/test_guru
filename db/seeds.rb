@@ -5,19 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create([{ name: 'Slava', email: 'Slava@mail.ru' },
-                    { name: 'Serg', email: 'Serg@mail.ru' }])
+user = User.first
 
 category = Category.create([{ name: :Biology },
                             { name: :Informatics },
                             { name: :History }])
 
-test = Test.create([{ title: 'Higher plants', category: category[0], author: user[0] },
-                    { title: 'Lower plants', category: category[0], author: user[0] },
-                    { title: 'Vertebrate animals', category: category[0], author: user[0] },
-                    { title: 'Basic informatics', level: 2, category: category[1], author: user[1] },
-                    { title: 'General informatics', level: 2, category: category[1], author: user[1] },
-                    { title: 'Pascal programming basics', level: 4, category: category[1], author: user[1] }])
+test = Test.create([{ title: 'Higher plants', category: category[0], author: user },
+                    { title: 'Lower plants', category: category[0], author: user },
+                    { title: 'Vertebrate animals', category: category[0], author: user },
+                    { title: 'Basic informatics', level: 2, category: category[1], author: user },
+                    { title: 'General informatics', level: 2, category: category[1], author: user },
+                    { title: 'Pascal programming basics', level: 4, category: category[1], author: user }])
 
 question = Question.create([{ body: 'Сколько дней живут корневые волоски?',
                               test: test[0] },
@@ -65,11 +64,3 @@ Answer.create([{ body: '10-20', question: question[0], correct: true },
                { body: 'дельфины и киты', question: question[8], correct: true },
                { body: 'дельфин и корова', question: question[8], correct: false },
                { body: 'крот и змея', question: question[8], correct: false }])
-
-# TestPassage.connection.execute("INSERT INTO test_passages VALUES
-#   (1, #{user[0]}, #{test[0].id}, #{question[0]}),
-#   (2, #{user[0]}, #{test[2]}, #{question[0]}),
-#   (3, #{user[0]}, #{test[4]}, #{question[0]}),
-#   (4, #{user[1]}, #{test[1]}, #{question[0]}),
-#   (5, #{user[1]}, #{test[3]}, #{question[0]}),
-#   (6, #{user[1]}, #{test[5]}, #{question[0]});")
