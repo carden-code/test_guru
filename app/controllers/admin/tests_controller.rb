@@ -5,7 +5,6 @@ class Admin::TestsController < Admin::BaseController
 
   def index
     @tests = Test.all
-    flash.now[:notice] = "Привет #{current_user.first_name}."
   end
 
   def show; end
@@ -37,11 +36,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private

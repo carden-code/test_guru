@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[last_name first_name])
+  end
+
+  def after_sign_in_path_for(user)
+    if user.admin?
+      admin_tests_path
+    else
+      root_path
+    end
   end
 end

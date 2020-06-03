@@ -2,14 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
-  def after_sign_in_path_for(user)
-    if user.admin?
-      admin_tests_path
-    else
-      root_path
-    end
-  end
+  after_action :message_after_login, only: :create
 
   # GET /resource/sign_in
   # def new
@@ -32,4 +25,9 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  private
+
+  def message_after_login
+    flash[:notice] = "Hello, #{current_user.first_name}!"
+  end
 end
