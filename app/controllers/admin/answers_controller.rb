@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::AnswersController < Admin::BaseController
   before_action :authenticate_user!
   before_action :find_question, only: %i[new create]
@@ -15,7 +17,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to admin_answer_path(@answer), notice: 'Answer was successfully created.'
+      redirect_to admin_answer_path(@answer), notice: t('.success')
     else
       render :new
     end
@@ -23,7 +25,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_answer_path(@answer)
+      redirect_to admin_answer_path(@answer), notice: t('.success')
     else
       render :edit
     end
@@ -32,7 +34,7 @@ class Admin::AnswersController < Admin::BaseController
   def destroy
     question = @answer.question
     @answer.destroy
-    redirect_to admin_question_path(question)
+    redirect_to admin_question_path(question), notice: t('.success')
   end
 
   private

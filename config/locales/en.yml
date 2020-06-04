@@ -1,33 +1,141 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  success:             "Hello %{user}"
+  easy:                "Easy"
+  medium:              "Medium"
+  hard:                "Hard"
+  welcome:             "Welcome %{user}"
+  exit:                "Exit"
+  home_test_guru:      "Home Test Guru"
+  header:              "Enter the Guru Gates"
+  email:               "Email"
+  password:            "Password"
+  pass_confirmation:   "Password Confirmation"
+  remember_me:         "Remember me"
+  enter:               "Enter"
+  sign_up:             "Sign Up"
+  forgot_password:     "Forgot your password?"
+  log_in:              "log in"
+  become:              "Become a Guru"
+  first_name:          "First_name"
+  last_name:           "Last_name"
+  new_test:            "New Test"
+  show:                "Show"
+  edit:                "Edit"
+  delete:              "Delete"
+  admin_panel:         "TestGuru, Admin Panel."
+  back:                "Back"
+  level:               "Level"
+  category_id:         "Category"
+  check:               "Check"
+  new_question:        "New Question"
+
+  layouts:
+    application:
+      confirmation:    "Do you really want to leave?"
+
+  helpers:
+    submit:
+      test:
+        create:        "Create Test"
+        update:        "Update Test"
+    label:
+      test:
+        title:         "Title"
+        level:         "Level"
+        category_id:   "Category"
+    submit:
+      question:
+        create:        "Create Question"
+        update:        "Update Question"
+    submit:
+      answer:
+        create:        "Create Answer"
+        update:        "Update Answer"
+    label:
+      answer:
+        body:          "Body"
+        correct:       "Correct"
+
+  shared:
+    errors:
+      header:
+        one:           "%{count} error detected"
+        other:         "%{count} errors detected"
+
+  tests:
+    index:
+      header:          "Tricky Tests"
+      table_title:     "Title"
+      table_level:     "Level"
+      table_amount:    "Amount"
+      table_actions:   "Actions"
+    test:
+      start:           "Start"
+
+
+  test_passages:
+    result:
+      header:          "The %{title} Test was Completed!"
+      good_result:     "Successfully! Your result"
+      bad result:      "You can do better! Your result"
+    show:
+      header:          "Passing test: %{title}"
+      header_2:        "Total number of questions: %{size}"
+      total:           "Question: %{total} - "
+      next:            "Next"
+
+  admin:
+    tests:
+      new:
+        header:        "Create New Test"
+      show:
+        title:         "Title"
+        level:         "Level"
+      create:
+        success:       "Test was successfully created."
+      update:
+        success:       "Test successfully updated"
+      destroy:
+        success:       "Test successfully deleted"
+      edit:
+        header:        "Edit %{title}"
+      index:
+        header:        "Tricky Tests"
+        table_title:   "Title"
+        table_level:   "Level"
+        table_amount:  "Amount"
+        table_actions: "Actions"
+    questions:
+      new:
+        header:        "Create Question %{title}"
+      edit:
+        header:        "Edit Question %{title}"
+      show:
+        header:        "%{title} Question"
+        answers:       "Answers"
+      create:
+        success:       "Question created successfully"
+      update:
+        success:       "Question successfully updated"
+      destroy:
+        success:       "Question deleted successfully"
+    answers:
+      new:
+        header:        "New Answer"
+      edit:
+        header:        "Edit Answer"
+      show:
+        header:        "Question"
+        header_2:      "Answer"
+        header_3:      "Correct"
+      create:
+        success:       "Answer created successfully"
+      update:
+        success:       "Answer successfully updated"
+      destroy:
+        success:       "Answer deleted successfully"
+
+
+  tests_mailer:
+    complited_test:
+      subject:         "You just complited the TestGuru test!"
