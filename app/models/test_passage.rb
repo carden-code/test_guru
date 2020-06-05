@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   PERCENT = 0.85
 
@@ -45,7 +47,11 @@ class TestPassage < ApplicationRecord
   # Метод correct_answer? определяет сравнивает правильный ответ с ответом
   # пользователя который пиходит в параметре (answer_ids) в виде массива.
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    if answer_ids.nil?
+      false
+    else
+      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    end
   end
 
   # Метод next_question возвращает следующий вопрос.

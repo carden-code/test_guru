@@ -1,10 +1,10 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('.title') %>:</strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <strong>Level:</strong>
+  <strong><%= t('.level') %>:</strong>
   <%= test_level(@test) %>
 </p>
 
@@ -12,16 +12,16 @@
   <% @test.questions.each do |question| %>
     <li>
       <%= question.body %>
-      <%= link_to 'Check', admin_question_path(question) %>
-      <%= link_to 'Delete', admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to 'Edit', edit_admin_question_path(question) %>
+      <%= link_to t('check'), admin_question_path(question) %>
+      <%= link_to t('edit'), edit_admin_question_path(question) %>
+      <%= link_to t('delete'), admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'New queston', new_admin_test_question_path(@test) %><br />
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('new_question'), new_admin_test_question_path(@test) %><br/>
+<%= link_to t('edit'), edit_admin_test_path(@test) %>
+<%= link_to t('back'), admin_tests_path %>
 
 <%# line_2 - Перебирает вопросы определённого теста и передаёт каждый вопрос в блок
  line_4 - выводит тело вопроса

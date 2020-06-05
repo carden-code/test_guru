@@ -1,17 +1,19 @@
-<h1>The <%= @test_passage.test.title %> Test was Complited!</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <p>
   <% if @test_passage.passing_result? %>
-    <b>Успешно! Ваш результат:</b>
-      <p style="color:#006400">
-        <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %> %
-      </p>
+    <b><%= t('.good_result') %>:</b>
+    <p style="color:#006400">
+      <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
+      %
+    </p>
   <% else %>
-    <b>Вы можете лучше! Ваш результат:</b>
-      <p style="color:#8B0000">
-        <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %> %
-      </p>
+    <b><%= t('.bad_result') %>:</b>
+    <p style="color:#8B0000">
+      <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
+      %
+    </p>
   <% end %>
 </p>
 
-<p><%= link_to 'Back', tests_path %></p>
+<p><%= link_to t('.back'), tests_path %></p>

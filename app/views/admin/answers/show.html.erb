@@ -1,17 +1,17 @@
-<h1>Question</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
   <%= @answer.question.body %>
 </p>
 
 <p>
-  <b>Answer:</b>
+  <b><%= t('.header_2') %>:</b>
   <%= @answer.body %>
 </p>
 
 <p>
-  <b>Correct:</b>
+  <b><%= t('.header_3') %>:</b>
   <%= @answer.correct %>
 </p>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('back'), admin_question_path(@answer.question) %>

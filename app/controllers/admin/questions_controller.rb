@@ -1,5 +1,6 @@
-class Admin::QuestionsController < Admin::BaseController
+# frozen_string_literal: true
 
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[update edit show destroy]
 
@@ -15,7 +16,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = @test.questions.new(post_params)
     if @question.save
-      redirect_to admin_question_path(@question)
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :new
     end
@@ -29,7 +30,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(post_params)
-      redirect_to admin_question_path(@question)
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :edit
     end
@@ -39,7 +40,7 @@ class Admin::QuestionsController < Admin::BaseController
   def destroy
     @test = @question.test
     @question.destroy
-    redirect_to admin_test_path(@test)
+    redirect_to admin_test_path(@test), notice: t('.success')
   end
 
   private
