@@ -1,6 +1,6 @@
 <li>
-  <%= answer.body %><br>
-  <%= link_to t('show'), admin_answer_path(answer) %>
-  <%= link_to t('edit'), edit_admin_answer_path(answer) %>
-  <%= link_to t('delete'), admin_answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= answer.body %>
+  <a href="<%= admin_answer_path(answer) %>" class="badge badge-primary"><%= t('show') %></a>
+  <a href="<%= edit_admin_answer_path(answer) %>" class="badge badge-info"><%= t('edit') %></a>
+  <a data-confirm="<%= t('confirm') %>" data-method="delete" href="<%= admin_answer_path(answer) %>" class="badge badge-danger"><%= t('delete') %></a>
 </li>

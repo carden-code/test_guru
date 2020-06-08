@@ -2,9 +2,17 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to t('show'), admin_test_path(test) %></td>
-  <td><%= link_to t('edit'), edit_admin_test_path(test) %></td>
+
   <td>
-    <%= link_to t('delete'), admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <a href="<%= admin_test_path(test) %>" class="badge badge-primary"><%= t('show') %></a>
   </td>
+
+  <td>
+    <a href="<%= edit_admin_test_path(test) %>" class="badge badge-info"><%= t('edit') %></a>
+  </td>
+
+  <td>
+   <a data-confirm="<%= t('confirm') %>" data-method="delete" href="<%= admin_test_path(test) %>" class="badge badge-danger"><%= t('delete') %></a>
+  </td>
+
 </tr>

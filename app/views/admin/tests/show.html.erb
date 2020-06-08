@@ -1,30 +1,32 @@
-<p>
-  <strong><%= t('.title') %>:</strong>
-  <%= @test.title %>
-</p>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <p>
+    <strong><%= t('.title') %>:</strong>
+    <%= @test.title %>
+  </p>
 
-<p>
-  <strong><%= t('.level') %>:</strong>
-  <%= test_level(@test) %>
-</p>
+  <p>
+    <strong><%= t('.level') %>:</strong>
+    <%= test_level(@test) %>
+  </p>
+  <a href="<%= new_admin_test_question_path(@test) %>" class="badge badge-success"><%= t('new_question') %></a>
+  <a href="<%= edit_admin_test_path(@test) %>" class="badge badge-info"><%= t('edit') %></a>
+</div>
 
-<ul>
+<ul class="list-group">
   <% @test.questions.each do |question| %>
-    <li>
-      <%= question.body %>
-      <%= link_to t('check'), admin_question_path(question) %>
-      <%= link_to t('edit'), edit_admin_question_path(question) %>
-      <%= link_to t('delete'), admin_question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <li class="list-group-item">
+      <div class="shadow p-3 bg-white rounded">
+        <p class="text-left">
+          <%= question.body %>
+        </p>
+        <div class="">
+          <a href="<%= admin_question_path(question) %>" class="badge badge-primary"><%= t('check') %></a>
+          <a href="<%= edit_admin_question_path(question) %>" class="badge badge-info"><%= t('edit') %></a>
+          <a data-confirm="<%= t('confirm') %>" data-method="delete" href="<%= admin_question_path(question) %>" class="badge badge-danger"><%= t('delete') %></a>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>
 
-<%= link_to t('new_question'), new_admin_test_question_path(@test) %><br/>
-<%= link_to t('edit'), edit_admin_test_path(@test) %>
-<%= link_to t('back'), admin_tests_path %>
-
-<%# line_2 - Перебирает вопросы определённого теста и передаёт каждый вопрос в блок
- line_4 - выводит тело вопроса
- line_5 - Добавляет кнопку (посмотреть вопрос)
- line_6 - Добавляет кнопку (Удалить вопрос)
- line_11 - Добавляет кнопку создать новый вопрос для конкретно теста из (before_action) %>
+<a class="btn btn-primary" href="<%= admin_tests_path %>" role="button"><%= t('back') %></a>

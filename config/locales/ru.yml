@@ -5,7 +5,7 @@ ru:
   hard:                "Сложный"
   welcome:             "Добро пожаловать %{user}"
   exit:                "Выход"
-  home_test_guru:      "На главную Test Guru"
+  home_test_guru:      "Тест Гуру"
   header:              "Войдите в ворота Гуру"
   email:               "Электронная Почта"
   password:            "Пароль"
@@ -22,7 +22,7 @@ ru:
   show:                "Посмотреть"
   edit:                "Редактировать"
   delete:              "Удалить"
-  admin_panel:         "Тест Гуру. Панель Администратора."
+  admin_panel:         "Тест Гуру (Админ.)"
   back:                "Назад"
   level:               "Уровень"
   category_id:         "Категория"
@@ -30,10 +30,10 @@ ru:
   new_question:        "Новый вопрос"
   body:                "Содержание"
   new_answer:          "Новый Ответ"
-
-  layouts:
-    application:
-      confirmation:    "Вы действительно хотите выйти?"
+  confirm:             "Вы уверены?"
+  panel:               "Панель управления"
+  confirmation:        "Вы действительно хотите выйти?"
+  start_test:          "Желаем успешного прохождения"
 
   helpers:
     submit:
@@ -65,6 +65,8 @@ ru:
         many:          "Обнаружено %{count} ошибок"
         one:           "Обнаружена %{count} ошибка"
         other:         "Обнаружено %{count} ошибки"
+    nav:
+      confirmation:    "Вы действительно хотите выйти?"
 
   tests:
     index:
@@ -86,7 +88,7 @@ ru:
     show:
       header:          "Прохождение теста: %{title}"
       header_2:        "Общее количество вопросов: %{size}"
-      total:           "Вопрос: %{total} - "
+      total:           "Вопрос: %{total}"
       next:            "Следующий"
 
 

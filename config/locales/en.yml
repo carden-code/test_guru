@@ -5,7 +5,7 @@ en:
   hard:                "Hard"
   welcome:             "Welcome %{user}"
   exit:                "Exit"
-  home_test_guru:      "Home Test Guru"
+  home_test_guru:      "Test Guru"
   header:              "Enter the Guru Gates"
   email:               "Email"
   password:            "Password"
@@ -22,16 +22,16 @@ en:
   show:                "Show"
   edit:                "Edit"
   delete:              "Delete"
-  admin_panel:         "TestGuru, Admin Panel."
+  admin_panel:         "TestGuru (Admin)"
   back:                "Back"
   level:               "Level"
   category_id:         "Category"
   check:               "Check"
   new_question:        "New Question"
-
-  layouts:
-    application:
-      confirmation:    "Do you really want to leave?"
+  confirm:             "Are you sure?"
+  panel:               "Control Panel"
+  confirmation:        "Do you really want to leave?"
+  start_test:          "We wish you a successful passage"
 
   helpers:
     submit:
@@ -61,6 +61,8 @@ en:
       header:
         one:           "%{count} error detected"
         other:         "%{count} errors detected"
+    nav:
+      confirmation:    "Do you really want to leave?"
 
   tests:
     index:
@@ -81,7 +83,7 @@ en:
     show:
       header:          "Passing test: %{title}"
       header_2:        "Total number of questions: %{size}"
-      total:           "Question: %{total} - "
+      total:           "Question: %{total}"
       next:            "Next"
 
   admin:

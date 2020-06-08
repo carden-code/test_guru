@@ -1,19 +1,27 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3>
+    <%= t('.header', title: @test_passage.test.title) %>
+  </h3>
+</div>
 
-<p>
-  <% if @test_passage.passing_result? %>
-    <b><%= t('.good_result') %>:</b>
-    <p style="color:#006400">
-      <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
-      %
-    </p>
-  <% else %>
-    <b><%= t('.bad_result') %>:</b>
-    <p style="color:#8B0000">
-      <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
-      %
-    </p>
-  <% end %>
-</p>
+<div class="row mx-md-n5">
+  <div class="col px-md-5">
+    <div class="p-3 bg-light">
+      <% if @test_passage.passing_result? %>
+        <b><%= t('.good_result') %>:</b>
+        <p style="color:#006400">
+          <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
+            %
+        </p>
+      <% else %>
+        <b><%= t('.bad_result') %>:</b>
+        <p style="color:#8B0000">
+          <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
+            %
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<p><%= link_to t('.back'), tests_path %></p>
+<a class="btn btn-primary" href="<%= tests_path %>" role="button"><%= t('back') %></a>

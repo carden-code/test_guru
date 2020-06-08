@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,19 +12,16 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <p class="nav user">
-        <b><%= t('welcome', user: current_user.first_name) %></b>
-        <br>
-        <b><%= link_to t('home_test_guru'), tests_path %></b><br>
-        <b><%= link_to t('exit'), destroy_user_session_path, method: :delete, data: { confirm: t('.confirmation')} %></b>
-      </p>
-    <% end %>
+    <%= render 'shared/nav' %>
 
-    <%= render 'shared/flash' %>
-
-    <%= yield %>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1-12">
+          <%= render 'shared/flash' %>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
     <%= render "layouts/footer" %>
   </body>
 </html>
