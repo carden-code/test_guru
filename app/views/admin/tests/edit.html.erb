@@ -1,4 +1,9 @@
-<h1><%= t('.header', title: @test.title) %></h1>
-
-<%= render 'form' %>
-<%= link_to t('back'), admin_tests_path %>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3><%= t('.header', title: @test.title) %></h3>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <%= render 'form' %>
+  </div>
+</div>
+<a class="btn btn-primary" href="<%= admin_test_path(@test) %>" role="button"><%= t('back') %></a>

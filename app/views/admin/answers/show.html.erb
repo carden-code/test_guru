@@ -1,17 +1,19 @@
-<h1><%= t('.header') %></h1>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3><%= t('.header') %>:</h3>
+  <p><%= @answer.question.body %></p>
+</div>
 
-<p>
-  <%= @answer.question.body %>
-</p>
+<div class="p-3 mb-5">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <b><%= t('.header_2') %></b>:
+      <%= @answer.body %>
+    </li>
+    <li class="list-group-item">
+      <b><%= t('.header_3') %>:</b>
+      <%= @answer.correct %>
+    </li>
+  </ul>
+</div>
 
-<p>
-  <b><%= t('.header_2') %>:</b>
-  <%= @answer.body %>
-</p>
-
-<p>
-  <b><%= t('.header_3') %>:</b>
-  <%= @answer.correct %>
-</p>
-
-<%= link_to t('back'), admin_question_path(@answer.question) %>
+<a class="btn btn-primary" href="<%= admin_question_path(@answer.question) %>" role="button"><%= t('back') %></a>

@@ -1,22 +1,27 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3>
+    <%= t('.header', title: @test_passage.test.title) %>
+  </h3>
 
-<h2><%= t('.header_2', size: @test_passage.test.questions.size) %></h2><br>
+  <p>
+    <%= t('.header_2', size: @test_passage.test.questions.size) %>
+  </p>
+</div>
 
-<b>
-  <%= t('.total', total: @test_passage.test.questions.index(@test_passage.current_question) + 1) %>
-</b>
+<ul class="list-group">
+  <li class="list-group-item disabled" aria-disabled="true"><%= t('.total', total: (@test_passage.test.questions.index(@test_passage.current_question)) + 1) %></li>
+  <li class="list-group-item"><%= @test_passage.current_question.body %></li>
+</ul>
 
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-<%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-<p>
-  <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-  <%= b.label %>
-</p>
-<% end %>
-
-<p><%= form.submit t('.next') %></p>
-<% end %>
+<div class="form-check mt-4">
+  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+      <p>
+        <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+        <%= b.label %>
+      </p>
+    <% end %>
+      <p><%= form.submit t('.next') %></p>
+  <% end %>
+</div>

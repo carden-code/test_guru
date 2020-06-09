@@ -1,16 +1,22 @@
-<h1><%= t('.header', title: @question.test.title) %>:</h1>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3><%= t('.header', title: @question.test.title) %>:</h3>
+  <h4><%= @question.body %></h4>
+  <a href="<%= new_admin_question_answer_path(@question) %>" class="badge badge-success">
+    <%= t('new_answer') %>
+  </a>
+  <a href="<%= edit_admin_question_path(@question) %>" class="badge badge-info"><%= t('edit') %></a>
+</div>
 
-<p>
-  <%= @question.body %>
-</p>
+<div class="">
+  <h3 class="text-muted">
+    <%= t('.answers') %>:
+  </h3>
+</div>
 
-<h2><%= t('.answers') %>:</h2>
+<div class="">
+  <ol>
+    <%= render @question.answers %>
+  </ol>
+</div>
 
-<%= link_to t('new_answer'), new_admin_question_answer_path(@question) %>
-
-<ol>
-  <%= render @question.answers %>
-</ol>
-
-<%= link_to t('edit'), edit_admin_question_path(@question) %>
-<%= link_to t('back'), admin_test_path(@question.test) %>
+<a class="btn btn-primary" href="<%= admin_test_path(@question.test) %>" role="button"><%= t('back') %></a>
