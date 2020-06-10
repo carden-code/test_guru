@@ -22,6 +22,7 @@
         <%= b.label %>
       </p>
     <% end %>
+      <p><%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), method: :post %></p>
       <p><%= form.submit t('.next') %></p>
   <% end %>
 </div>

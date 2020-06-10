@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to Question.find_by(id: gist.question_id).body.truncate(25), admin_question_path(gist.question) %></td>
+  <td><%= link_to "Gist => '#{gist.url}'", gist.url %></td>
+  <td><%= User.find_by(id: gist.user_id).email %></td>
+</tr>

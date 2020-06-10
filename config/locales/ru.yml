@@ -5,7 +5,7 @@ ru:
   hard:                "Сложный"
   welcome:             "Добро пожаловать %{user}"
   exit:                "Выход"
-  home_test_guru:      "Тест Гуру"
+  home_test_guru:      "TestGuru"
   header:              "Войдите в ворота Гуру"
   email:               "Электронная Почта"
   password:            "Пароль"
@@ -22,7 +22,7 @@ ru:
   show:                "Посмотреть"
   edit:                "Редактировать"
   delete:              "Удалить"
-  admin_panel:         "Тест Гуру (Админ.)"
+  admin_panel:         "TestGuru (Админ.)"
   back:                "Назад"
   level:               "Уровень"
   category_id:         "Категория"
@@ -34,6 +34,11 @@ ru:
   panel:               "Панель управления"
   confirmation:        "Вы действительно хотите выйти?"
   start_test:          "Желаем успешного прохождения"
+  gist_question:       "Вопрос на тему %{gist} от TestGuru"
+  gists:               "Гисты"
+  question:            "Вопрос"
+  link:                "Ссылка"
+  user:                "Пользователь"
 
   helpers:
     submit:
@@ -90,6 +95,10 @@ ru:
       header_2:        "Общее количество вопросов: %{size}"
       total:           "Вопрос: %{total}"
       next:            "Следующий"
+      create_gist:     "Создать Gist"
+    gist:
+      success:         "Gist успешно сохранён! %{html_url}"
+      danger:          "Во время сохранения gist произошла оибка!"
 
 
   users:

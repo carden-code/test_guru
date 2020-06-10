@@ -32,6 +32,11 @@ en:
   panel:               "Control Panel"
   confirmation:        "Do you really want to leave?"
   start_test:          "We wish you a successful passage"
+  gist_question:       "A question about %{gist} from TestGuru"
+  gists:               "Gists"
+  question:            "Question"
+  link:                "Link"
+  user:                "User"
 
   helpers:
     submit:
@@ -85,6 +90,10 @@ en:
       header_2:        "Total number of questions: %{size}"
       total:           "Question: %{total}"
       next:            "Next"
+      create_gist:     "Create Gist"
+    gist:
+      success:         "Gist was successfully created! %{html_url}"
+      danger:          "An error occurred while saving gist"
 
   admin:
     tests:

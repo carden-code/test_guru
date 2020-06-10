@@ -1,0 +1,19 @@
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3><%= t('gists') %></h3>
+</div>
+<div class="mt-1">
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"><%= t('question') %></th>
+      <th scope="col"><%= t('link') %></th>
+      <th scope="col"><%= t('user') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%= render @gists %>
+    </tr>
+  </tbody>
+  </table>
+</div>
