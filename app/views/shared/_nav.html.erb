@@ -6,11 +6,14 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="<%= root_path %>"><%= t('home_test_guru') %></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <% if current_user.admin? %>
       <li class="nav-item active">
-        <% if current_user.admin? %>
-          <a class="nav-link" href="<%= admin_tests_path %>"><%= t('panel') %> <span class="sr-only">(current)</span></a>
-        <% end %>
+        <a class="nav-link" href="<%= admin_tests_path %>"><%= t('panel') %></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= admin_gists_path %>"><%= t('gists') %></a>
+      </li>
+      <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <a class="navbar-brand">
