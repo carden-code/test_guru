@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class GistQuestionService
-  def initialize(question, client: nil)
+  def initialize(question)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+    @client = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
   def call
@@ -12,7 +12,8 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response.status == 200 || 201
+    @client.last_response.status.eql?(200) ||
+      @client.last_response.status.eql?(201)
   end
 
   private
