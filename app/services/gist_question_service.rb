@@ -12,8 +12,7 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response.status.eql?(200) ||
-      @client.last_response.status.eql?(201)
+    @client.last_response.status.in?([200, 201])
   end
 
   private
