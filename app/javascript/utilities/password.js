@@ -13,5 +13,5 @@ function colorChange(){
         input2.style.backgroundColor = "green"
       } else {
         input2.style.backgroundColor = ""
-      };
+        };
 };
