@@ -7,13 +7,14 @@ document.addEventListener('turbolinks:load',function() {
 function colorChange() {
   var input1 = document.querySelector("input#user_password"),
       input2 = document.querySelector("input#user_password_confirmation");
+
   if (input2.value === "") {
-    input2.style.backgroundColor = ""
-  } else if (input1.value != input2.value) {
-      input2.style.backgroundColor = "red"
-    } else if (input1.value === input2.value && input1.value != "") {
-        input2.style.backgroundColor = "green"
-      } else {
-          input2.style.backgroundColor = ""
-        }
+    return input2.style.backgroundColor = ""
+  };
+
+  if (input1.value != input2.value) {
+    input2.style.backgroundColor = "red"
+  } else {
+      input2.style.backgroundColor = "green"
+    }
 };
