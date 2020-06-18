@@ -7,15 +7,17 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th><%= t('.table_title') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('.table_title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th><%= t('.table_level') %></th>
       <th><%= t('.table_amount') %></th>
       <th><%= t('.table_actions') %></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <%= render @tests %>
-    </tr>
+    <%= render @tests %>
   </tbody>
 </table>
