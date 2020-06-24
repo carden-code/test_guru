@@ -6,12 +6,24 @@
   <p>
     <%= t('.header_2', size: @test_passage.test.questions.size) %>
   </p>
+
+  <div>
+    <%= content_tag :progress, 'progress',
+                    class: 'progress-bar progress',
+                    data: {
+                      value: @test_passage.current_question_number,
+                      max: @test_passage.test.questions.size
+                    } %>
+  </div>
 </div>
 
 <ul class="list-group">
-  <li class="list-group-item disabled" aria-disabled="true"><%= t('.total', total: (@test_passage.test.questions.index(@test_passage.current_question)) + 1) %></li>
+  <li class="list-group-item disabled"
+      aria-disabled="true"><%= t('.total', total: (@test_passage.current_question_number)) %>
+  </li>
   <li class="list-group-item"><%= @test_passage.current_question.body %></li>
 </ul>
+<a class="badge badge-success" <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), method: :post %></a>
 
 
 <div class="form-check mt-4">
@@ -22,7 +34,6 @@
         <%= b.label %>
       </p>
     <% end %>
-      <p><%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), method: :post %></p>
       <p><%= form.submit t('.next') %></p>
   <% end %>
 </div>

@@ -116,6 +116,8 @@ en:
         table_level:   "Level"
         table_amount:  "Amount"
         table_actions: "Actions"
+      form_inline:
+        submit:        "Ok"
     questions:
       new:
         header:        "Create Question %{title}"
