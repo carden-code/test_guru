@@ -7,8 +7,11 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require('jquery')
 require("../utilities/sorting")
 require("../utilities/password")
+require("../utilities/form_inline")
+require("../utilities/progressbar")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets

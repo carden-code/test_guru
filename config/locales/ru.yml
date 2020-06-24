@@ -127,6 +127,8 @@ ru:
         table_level:   "Уровень"
         table_amount:  "Количество"
         table_actions: "Действия"
+      form_inline:
+        submit:        "Ок"
     questions:
       new:
         header:        "Создать вопрос %{title}"
