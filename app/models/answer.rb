@@ -1,7 +1,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  # Атрибут body не может иметь пустое значение.
+  # Атрибут body не может иметь пустое значение
   validates :body, presence: true
 
   # Проверка колличества ответов при создании.
