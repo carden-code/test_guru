@@ -1,0 +1,24 @@
+<%= form_with model: [:admin, @test], local: true do |form| %>
+<%= render 'shared/errors', resource: @test %>
+
+<p>
+  <%= form.label :title %><br>
+  <%= form.text_field :title, id: :test_title %>
+</p><br>
+
+<p>
+  <%= form.label t('level') %><br>
+  <%= form.number_field :level, id: :test_level %>
+</p>
+
+<p>
+  <%= form.label t('category_id') %>:
+  <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+</p>
+
+<p>
+  <%= form.hidden_field :author_id, :value => current_user.id %>
+</p>
+
+<p><%= form.submit %></p>
+<% end %>

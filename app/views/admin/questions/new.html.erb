@@ -1,0 +1,18 @@
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3><%= t('.header', title: @question.test.title) %></h3>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <%= render 'shared/errors', resource: @question %>
+
+    <%= form_for [:admin, @test, @question] do |form| %>
+
+    <%= form.label t('body') %><br>
+    <%= form.text_area :body %><br>
+
+    <%= form.submit %>
+
+    <% end %>
+  </div>
+</div>
+<a class="btn btn-primary" href="<%= admin_test_path(@test) %>" role="button"><%= t('back') %></a>

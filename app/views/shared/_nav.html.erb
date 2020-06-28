@@ -1,0 +1,36 @@
+<% if user_signed_in? %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="<%= root_path %>"><%= t('home_test_guru') %></a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <% if current_user.admin? %>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= admin_tests_path %>"><%= t('panel') %></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= admin_gists_path %>"><%= t('gists') %></a>
+      </li>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="navbar-brand">
+        <small>
+          <%= t('welcome',  user: current_user.first_name) %>
+        </small>
+      </a>
+      <a class="btn btn-primary" data-confirm="<%= t('.confirmation') %>" data-method="delete" href="<%= destroy_user_session_path %>" role="button"><%= t('exit') %></a>
+    </form>
+  </div>
+  </nav>
+<% else %>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+    <span class="navbar-text">
+      <%= link_to t('log_in'), new_session_path(resource_name) %>
+      <%= link_to t('sign_up'), new_registration_path(resource_name) %>
+    </span>
+  </nav>
+<% end %>
