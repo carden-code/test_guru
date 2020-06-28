@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: %('TestGuru' <yourtests.herokuapp.com>)
+  default from: 'yourtestsapp@gmail.com'
   layout 'mailer'
 end
