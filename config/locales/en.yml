@@ -68,6 +68,7 @@ en:
         other:         "%{count} errors detected"
     nav:
       confirmation:    "Do you really want to leave?"
+      feedback_new:    "Feedback"
 
   tests:
     index:
@@ -95,6 +96,20 @@ en:
       success:         "Gist was successfully created! %{html_url}"
       danger:          "An error occurred while saving gist"
 
+  users:
+    sessions:
+      success:         "Hello %{user}"
+
+  feedbacks:
+    create:
+      feedback_ok:     "Feedback was successfully sended."
+      feedback_no:     "Failed to send feedback"
+    form:
+      send:            "Send"
+      text:            "Text"
+    new:
+      feedback_form:   "Write to us"
+
   admin:
     tests:
       new:
@@ -116,8 +131,12 @@ en:
         table_level:   "Level"
         table_amount:  "Amount"
         table_actions: "Actions"
+      form:
+        title:         "Title"
       form_inline:
         submit:        "Ok"
+      update_inline:
+        success:       "The upgrade was successful"
     questions:
       new:
         header:        "Create Question %{title}"
@@ -147,7 +166,8 @@ en:
         success:       "Answer successfully updated"
       destroy:
         success:       "Answer deleted successfully"
-
+    nav:
+      feedback_new:    "Feedback"
 
   tests_mailer:
     complited_test:

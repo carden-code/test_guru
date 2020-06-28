@@ -6,6 +6,9 @@
     <a class="navbar-brand" href="<%= root_path %>"><%= t('admin_panel') %></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
+        <a class="nav-link" href="<%= new_feedback_path %>"><%= t('.feedback_new') %></a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="<%= admin_tests_path %>"><%= t('panel') %></a>
       </li>
       <li class="nav-item active">

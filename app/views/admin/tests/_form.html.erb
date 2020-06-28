@@ -2,7 +2,7 @@
 <%= render 'shared/errors', resource: @test %>
 
 <p>
-  <%= form.label :title %><br>
+  <%= form.label t('.title') %><br>
   <%= form.text_field :title, id: :test_title %>
 </p><br>
 
@@ -20,5 +20,5 @@
   <%= form.hidden_field :author_id, :value => current_user.id %>
 </p>
 
-<p><%= form.submit %></p>
+<p><%= form.submit class: 'btn btn-info'%></p>
 <% end %>
