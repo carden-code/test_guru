@@ -8,10 +8,8 @@ class FeedbacksController < ApplicationController
 
     if @feedback.valid?
       FeedbackMailer.with(@feedback).send_feedback.deliver_now
-      #'Feedback was successfully sended.'
       redirect_to root_path, success: t('.feedback_ok')
     else
-      #'Failed to send feedback'
       render :new, danger: t('.feedback_no')
     end
   end
