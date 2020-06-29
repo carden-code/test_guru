@@ -11,8 +11,12 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), success: t('start_test')
+    if @test.questions.any?
+      current_user.tests.push(@test)
+      redirect_to current_user.test_passage(@test), success: t('.start_test')
+    else
+      redirect_to root_path, warning: t('.no_questions')
+    end
   end
 
   private

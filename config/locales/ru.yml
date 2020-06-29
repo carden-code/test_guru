@@ -33,7 +33,6 @@ ru:
   confirm:             "Вы уверены?"
   panel:               "Панель управления"
   confirmation:        "Вы действительно хотите выйти?"
-  start_test:          "Желаем успешного прохождения"
   gist_question:       "Вопрос на тему %{gist} от TestGuru"
   gists:               "Гисты"
   question:            "Вопрос"
@@ -84,6 +83,9 @@ ru:
       table_actions:   "Действия"
     test:
       start:           "Старт"
+    start:
+      no_questions:    "Выберите пожалуйста другой тест, вопросы находятся на модерации."
+      start_test:      "Желаем Вам успешного прохождения"
 
 
   test_passages:

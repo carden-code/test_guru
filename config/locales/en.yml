@@ -31,7 +31,6 @@ en:
   confirm:             "Are you sure?"
   panel:               "Control Panel"
   confirmation:        "Do you really want to leave?"
-  start_test:          "We wish you a successful passage"
   gist_question:       "A question about %{gist} from TestGuru"
   gists:               "Gists"
   question:            "Question"
@@ -79,6 +78,9 @@ en:
       table_actions:   "Actions"
     test:
       start:           "Start"
+    start:
+      no_questions:    "Please choose another test, questions are being moderated."
+      start_test:      "We wish you a successful passage"
 
 
   test_passages:
