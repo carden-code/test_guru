@@ -31,7 +31,6 @@ en:
   confirm:             "Are you sure?"
   panel:               "Control Panel"
   confirmation:        "Do you really want to leave?"
-  start_test:          "We wish you a successful passage"
   gist_question:       "A question about %{gist} from TestGuru"
   gists:               "Gists"
   question:            "Question"
@@ -68,6 +67,7 @@ en:
         other:         "%{count} errors detected"
     nav:
       confirmation:    "Do you really want to leave?"
+      feedback_new:    "Feedback"
 
   tests:
     index:
@@ -78,6 +78,9 @@ en:
       table_actions:   "Actions"
     test:
       start:           "Start"
+    start:
+      no_questions:    "Please choose another test, questions are being moderated."
+      start_test:      "We wish you a successful passage"
 
 
   test_passages:
@@ -94,6 +97,20 @@ en:
     gist:
       success:         "Gist was successfully created! %{html_url}"
       danger:          "An error occurred while saving gist"
+
+  users:
+    sessions:
+      success:         "Hello %{user}"
+
+  feedbacks:
+    create:
+      feedback_ok:     "Feedback was successfully sended."
+      feedback_no:     "Failed to send feedback"
+    form:
+      send:            "Send"
+      text:            "Text"
+    new:
+      feedback_form:   "Write to us"
 
   admin:
     tests:
@@ -116,8 +133,12 @@ en:
         table_level:   "Level"
         table_amount:  "Amount"
         table_actions: "Actions"
+      form:
+        title:         "Title"
       form_inline:
         submit:        "Ok"
+      update_inline:
+        success:       "The upgrade was successful"
     questions:
       new:
         header:        "Create Question %{title}"
@@ -147,7 +168,8 @@ en:
         success:       "Answer successfully updated"
       destroy:
         success:       "Answer deleted successfully"
-
+    nav:
+      feedback_new:    "Feedback"
 
   tests_mailer:
     complited_test:

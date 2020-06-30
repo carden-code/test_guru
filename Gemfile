@@ -34,9 +34,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.0'
 
 # NETWORKING
-
 gem 'faraday'
-gem 'octokit', "~> 4.0"
+gem 'octokit', '~> 4.0'
 
 # LOCALIZATION
 gem 'rails-i18n', '~> 6.0.0'
@@ -45,6 +44,8 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'octicons_helper'
+
+gem 'rake', '~> 12.3.2', '>= 12.3.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

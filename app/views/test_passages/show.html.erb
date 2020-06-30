@@ -11,7 +11,7 @@
     <%= content_tag :progress, 'progress',
                     class: 'progress-bar progress',
                     data: {
-                      value: @test_passage.current_question_number,
+                      value: @test_passage.current_question_number - 1,
                       max: @test_passage.test.questions.size
                     } %>
   </div>
@@ -25,7 +25,6 @@
 </ul>
 <a class="badge badge-success" <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), method: :post %></a>
 
-
 <div class="form-check mt-4">
   <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
     <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
@@ -34,6 +33,8 @@
         <%= b.label %>
       </p>
     <% end %>
-      <p><%= form.submit t('.next') %></p>
+      <p>
+        <%= form.submit t('.next'), class: 'btn btn-info'%>
+      </p>
   <% end %>
 </div>

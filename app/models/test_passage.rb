@@ -32,6 +32,7 @@ class TestPassage < ApplicationRecord
     self.correct_questions >= self.test.questions.size * PERCENT
   end
 
+  # Возвращает номер текущего вопроса.
   def current_question_number
     test.questions.where('id <= ?', current_question.id).count
   end

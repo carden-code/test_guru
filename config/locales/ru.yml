@@ -33,12 +33,12 @@ ru:
   confirm:             "Вы уверены?"
   panel:               "Панель управления"
   confirmation:        "Вы действительно хотите выйти?"
-  start_test:          "Желаем успешного прохождения"
   gist_question:       "Вопрос на тему %{gist} от TestGuru"
   gists:               "Гисты"
   question:            "Вопрос"
   link:                "Ссылка"
   user:                "Пользователь"
+  form_inline:         "Отмена"
 
   helpers:
     submit:
@@ -72,6 +72,7 @@ ru:
         other:         "Обнаружено %{count} ошибки"
     nav:
       confirmation:    "Вы действительно хотите выйти?"
+      feedback_new:    "Обратная связь"
 
   tests:
     index:
@@ -82,6 +83,9 @@ ru:
       table_actions:   "Действия"
     test:
       start:           "Старт"
+    start:
+      no_questions:    "Выберите пожалуйста другой тест, вопросы находятся на модерации."
+      start_test:      "Желаем Вам успешного прохождения"
 
 
   test_passages:
@@ -105,6 +109,15 @@ ru:
     sessions:
       success:         "Привет %{user}"
 
+  feedbacks:
+    create:
+      feedback_ok:     "Отзыв был успешно отправлен."
+      feedback_no:     "Не удалось отправить отзыв"
+    form:
+      send:            "Отправить"
+      text:            "Текст"
+    new:
+      feedback_form:   "Напишите нам"
 
   admin:
     tests:
@@ -127,8 +140,12 @@ ru:
         table_level:   "Уровень"
         table_amount:  "Количество"
         table_actions: "Действия"
+      form:
+        title:         "Название"
       form_inline:
         submit:        "Ок"
+      update_inline:
+        success:       "Обновление прошло успешно"
     questions:
       new:
         header:        "Создать вопрос %{title}"
@@ -158,6 +175,8 @@ ru:
         success:       "Ответ успешно обнавлён"
       destroy:
         success:       "Ответ успешно удалён"
+    nav:
+      feedback_new:    "Обратная связь"
 
   tests_mailer:
     complited_test:
