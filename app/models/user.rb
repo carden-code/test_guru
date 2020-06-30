@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :gists
-  has_many :badges
 
   # Атрибут name не могут иметь пустое значение
   # validates :name, presence: true
