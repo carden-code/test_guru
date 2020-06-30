@@ -3,6 +3,7 @@
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
+
   <td class="align-middle"><%= test_level(test) %></td>
   <td class="align-middle"><%= test.questions.size %></td>
 
@@ -12,8 +13,8 @@
 
   <td class="align-middle">
     <%= link_to t('edit'), edit_admin_test_path(test), data: { test_id: test.id }, class: 'form-inline-link badge badge-info' %>
-
+  </td>
   <td class="align-middle">
-   <a data-confirm="<%= t('confirm') %>" data-method="delete" href="<%= admin_test_path(test) %>" class="badge badge-danger"><%= t('delete') %></a>
+    <a data-confirm="<%= t('confirm') %>" data-method="delete" href="<%= admin_test_path(test) %>" class="badge badge-danger"><%= t('delete') %></a>
   </td>
 </tr>

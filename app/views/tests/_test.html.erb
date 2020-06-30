@@ -1,7 +1,17 @@
 <tr>
-  <td><%= test.title %></td>
-  <td><%= test_level(test) %></td>
-  <td><%= test.questions.size %></td>
-  <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-info' %>
-  </td>
+  <% if test.questions.any? && test.questions.first.answers.any? %>
+    <td><%= test.title %></td>
+    <td><%= test_level(test) %></td>
+    <td><%= test.questions.size %></td>
+    <td>
+      <%= button_to t('.start'), start_test_path(test), class: 'btn btn-info' %>
+    </td>
+  <% else %>
+    <td><%= test.title %></td>
+    <td><%= test_level(test) %></td>
+    <td><%= test.questions.size %></td>
+    <td>
+      <%= button_to t('.start'), start_test_path(test), class: 'btn btn-info disabled', disabled: true  %>
+    </td>
+  <% end %>
 </tr>

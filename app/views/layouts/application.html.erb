@@ -13,15 +13,20 @@
 
   <body>
     <%= render 'shared/nav' %>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-1-12">
-          <%= render 'shared/flash' %>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <%= render 'shared/flash' %>
+          </div>
         </div>
       </div>
-      <%= yield %>
-    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
     <%= render "layouts/footer" %>
   </body>
 </html>
