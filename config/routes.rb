@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       end
     end
     resources :gists
+    resources :badges
   end
 
   resources :feedbacks, only: %i[new create]
