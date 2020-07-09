@@ -9,10 +9,8 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :gists
-  has_many :badges
-
-  # Атрибут name не могут иметь пустое значение
-  # validates :name, presence: true
+  has_many :badges_users, dependent: :destroy
+  has_many :badges, through: :badges_users
 
   # Метод list_all_tests принимает в качестве аргумента значение
   # уровня сложности и возвращает список всех Тестов, которые проходит или
