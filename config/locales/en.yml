@@ -36,6 +36,10 @@ en:
   question:            "Question"
   link:                "Link"
   user:                "User"
+  name:                "Name"
+  logo:                "Logo"
+  rule:                "Rule"
+  value:               "Value"
 
   helpers:
     submit:
@@ -68,6 +72,7 @@ en:
     nav:
       confirmation:    "Do you really want to leave?"
       feedback_new:    "Feedback"
+      badges:          "Badges"
 
   tests:
     index:
@@ -88,6 +93,7 @@ en:
       header:          "The %{title} Test was Completed!"
       good_result:     "Successfully! Your result"
       bad result:      "You can do better! Your result"
+      flash_new_badge: "You got new badges:: %{badge}"
     show:
       header:          "Passing test: %{title}"
       header_2:        "Total number of questions: %{size}"
@@ -170,7 +176,38 @@ en:
         success:       "Answer deleted successfully"
     nav:
       feedback_new:    "Feedback"
+      badge_new:       "Badges"
+    badges:
+      index:
+        badge_list:    "Badge list"
+        new_badge:     "Create badge"
+        badge_name:    "Name"
+        badge_logo:    "Logo"
+        badge_rule:    "Rule"
+        badge_value:   "Value"
+        table_actions: "Actions"
+      new:
+        new_badge:     "New badge"
+      create:
+        badge_create:  "Badge created successfully"
+      edit:
+        edit_badge:    "Edit badge"
 
   tests_mailer:
     complited_test:
       subject:         "You just complited the TestGuru test!"
+
+  badges:
+    index:
+      badges_list:     "Badge list"
+      badge_name:      "Name"
+      badge_logo:      "Logo"
+      badge_rule:      "Rule"
+      badge_value:     "Value"
+    received:
+      received_badges: "Received badges"
+      badge_name:      "Name"
+      badge_logo:      "logo"
+      badge_rule:      "Rule"
+      badge_value:     "Value"
+      all_badges:      "All badges"

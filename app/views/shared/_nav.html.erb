@@ -9,6 +9,10 @@
       <li class="nav-item active">
         <a class="nav-link" href="<%= new_feedback_path %>"><%= t('.feedback_new') %></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= badges_path %>"><%= t('.badges') %></a>
+      </li>
+
       <% if current_user.admin? %>
       <li class="nav-item active">
         <a class="nav-link" href="<%= admin_tests_path %>"><%= t('panel') %></a>

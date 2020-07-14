@@ -1,0 +1,35 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+<%= render 'shared/errors', resource: @test %>
+  <div class="form-group">
+    <p>
+      <%= form.label t('name') %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <p>
+      <%= form.label t('logo') %>
+      <%= form.text_field :logo, class: 'form-control' %>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <p>
+      <%= form.label t('rule') %>
+      <%= form.text_field :rule, class: 'form-control' %>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <p>
+      <%= form.label t('value') %>
+      <%= form.text_field :value, class: 'form-control' %>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <p><%= form.submit class: 'btn btn-success' %></p>
+  </div>
+
+<% end %>

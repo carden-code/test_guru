@@ -1,0 +1,17 @@
+<tr>
+   <td class="align-middle"><%= badge.name %></td>
+   <td class="align-middle"><%= image_tag badge.logo %></td>
+   <td class="align-middle"><%= badge.rule %></td>
+   <td class="align-middle"><%= badge.value %></td>
+
+   <td class="align-middle">
+     <%= link_to t('edit'), edit_admin_badge_path(badge), class: 'badge badge-info' %>
+   </td>
+   <td class="align-middle">
+      <a data-confirm="<%= t('confirm') %>"
+        data-method="delete"
+        href="<%= admin_badge_path(badge) %>"
+        class="badge badge-danger"><%= t('delete') %>
+      </a>
+   </td>
+</tr>

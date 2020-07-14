@@ -1,0 +1,30 @@
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h2 class="text-left">
+    <%= t('.badge_list') %>
+  </h2>
+
+  <a href="<%= new_admin_badge_path %>" class="badge badge-success">
+    <%= t('.new_badge') %>
+  </a>
+</div>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<div class="mt-1">
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t('.badge_name') %></th>
+      <th><%= t('.badge_logo') %></th>
+      <th><%= t('.badge_rule') %></th>
+      <th><%= t('.badge_value') %></th>
+      <th colspan="3"><%= t('.table_actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+  </table>
+</div>
+
+<a class="btn btn-primary" href="<%= admin_tests_path %>" role="button"><%= t('back') %></a>

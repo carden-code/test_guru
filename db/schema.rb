@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_074112) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "name", null: false
     t.string "logo", null: false
     t.string "rule", null: false
     t.string "value", null: false
