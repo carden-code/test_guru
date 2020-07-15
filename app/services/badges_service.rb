@@ -3,9 +3,10 @@ class BadgesService
 
   def initialize(test_passage)
     @test_passage = test_passage
+    return unless @test_passage.passing_result?
+
     @user = test_passage.user
     @badges = []
-
     check_all_conditions
   end
 
@@ -16,8 +17,6 @@ class BadgesService
   end
 
   def check_test_category
-    return unless @test_passage.passing_result?
-
     test_category = @test_passage.test.category
     badge = find_badge('category', test_category.name)
     return unless badge.present?
@@ -29,18 +28,13 @@ class BadgesService
   end
 
   def check_attempts
-    return unless @test_passage.passing_result?
-
     user_tests_attempts = @user.test_passages.where(test_id: Test.where(title: @test_passage.test.title).ids).count
-
     badge = find_badge('attempts', user_tests_attempts)
 
     @badges.push(badge) if badge.present?
   end
 
   def check_tests_level
-    return unless @test_passage.passing_result?
-
     test_level = @test_passage.test.level
     badge = find_badge('tests_level', test_level)
     return unless badge.present?
