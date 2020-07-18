@@ -5,11 +5,13 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    badges = BadgesService.new(@test_passage)
-    badges.call
-    return if badges.badges.empty?
+    return unless @test_passage.passing_result?
 
-    flash.now[:success] = t('.flash_new_badge', badge: badges.badges.pluck(:name).join(','))
+    badges_service = BadgesService.new(@test_passage)
+    badges_service.call
+    return if badges_service.badges.empty?
+
+    flash.now[:success] = t('.flash_new_badge', badge: badges_service.badges.pluck(:name).join(','))
   end
 
   def gist

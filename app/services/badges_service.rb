@@ -8,8 +8,6 @@ class BadgesService
   end
 
   def call
-    return unless @test_passage.passing_result?
-
     Badge::RULES.each { |rule| send("check_#{rule}") }
 
     add_badge!(@badges)
