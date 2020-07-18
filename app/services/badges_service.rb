@@ -3,18 +3,23 @@ class BadgesService
 
   def initialize(test_passage)
     @test_passage = test_passage
-    return unless @test_passage.passing_result?
-
     @user = test_passage.user
     @badges = []
-    check_all_conditions
+  end
+
+  def call
+    return unless @test_passage.passing_result?
+
+    Badge::RULES.each { |rule| send("check_#{rule}") }
+
+    add_badge!(@badges)
+  end
+
+  def add_badge!(badge)
+    @user.badges << badge
   end
 
   private
-
-  def check_all_conditions
-    Badge::RULES.each { |rule| send("check_#{rule}") }
-  end
 
   def check_test_category
     test_category = @test_passage.test.category

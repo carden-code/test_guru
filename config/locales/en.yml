@@ -93,7 +93,7 @@ en:
       header:          "The %{title} Test was Completed!"
       good_result:     "Successfully! Your result"
       bad result:      "You can do better! Your result"
-      flash_new_badge: "You got new badges:: %{badge}"
+      flash_new_badge: "You got new badges: %{badge}"
     show:
       header:          "Passing test: %{title}"
       header_2:        "Total number of questions: %{size}"
