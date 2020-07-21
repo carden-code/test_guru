@@ -32,7 +32,11 @@ Rails.application.routes.draw do
       end
     end
     resources :gists
+    resources :badges
   end
 
   resources :feedbacks, only: %i[new create]
+
+  get 'badges', to: 'badges#received'
+  get 'badges-review', to: 'badges#index'
 end

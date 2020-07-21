@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2 class="text-left container">
+      <%= t('.received_badges') %>
+    </h2>
+    <a href="<%= badges_review_path %>" class="badge badge-success"><%= t('.all_badges') %></a>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= t('.badge_name') %></th>
+        <th><%= t('.badge_logo') %></th>
+        <th><%= t('.badge_rule') %></th>
+        <th><%= t('.badge_value') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @badges %>
+    </tbody>
+  </table>
+</div>
+
+<a class="btn btn-primary" href="<%= root_path %>" role="button"><%= t('back') %></a>

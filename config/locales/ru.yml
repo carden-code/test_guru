@@ -39,6 +39,11 @@ ru:
   link:                "Ссылка"
   user:                "Пользователь"
   form_inline:         "Отмена"
+  name:                "Название"
+  logo:                "Изображене"
+  rule:                "Правило"
+  value:               "Значение"
+  flash_new_badge:     "Вы получили новый значёк. %{badge_name}"
 
   helpers:
     submit:
@@ -73,6 +78,7 @@ ru:
     nav:
       confirmation:    "Вы действительно хотите выйти?"
       feedback_new:    "Обратная связь"
+      badges:          "Значки"
 
   tests:
     index:
@@ -94,6 +100,7 @@ ru:
       good_result:     "Успешно! Ваш результат"
       bad_result:      "Вы можете лучше! Ваш результат"
       back:            "Назад"
+      flash_new_badge: "Вы получили новые значки: %{badge}"
     show:
       header:          "Прохождение теста: %{title}"
       header_2:        "Общее количество вопросов: %{size}"
@@ -177,7 +184,39 @@ ru:
         success:       "Ответ успешно удалён"
     nav:
       feedback_new:    "Обратная связь"
+      badge_new:       "Значки"
+    badges:
+      index:
+        badge_list:    "Значки"
+        new_badge:     "Создать значёк"
+        badge_name:    "Название"
+        badge_logo:    "Изображение"
+        badge_rule:    "Правило"
+        badge_value:   "Значение"
+        table_actions: "Действия"
+      new:
+        new_badge:     "Новый значёк"
+      create:
+        badge_create:  "Значёк успешно создан"
+      edit:
+        edit_badge:    "Редактировать значёк"
+
 
   tests_mailer:
     complited_test:
       subject:         "Вы успешно завершили тест на TestGuru!"
+
+  badges:
+    index:
+      badges_list:     "Значки"
+      badge_name:      "Название"
+      badge_logo:      "Изображение"
+      badge_rule:      "Правило"
+      badge_value:     "Значение"
+    received:
+      received_badges: "Полученные значки"
+      badge_name:      "Название"
+      badge_logo:      "Изображение"
+      badge_rule:      "Правило"
+      badge_value:     "Значение"
+      all_badges:      "Все значки"

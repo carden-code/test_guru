@@ -1,10 +1,18 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test_passage, only: %i[gist show update result]
+  before_action :find_test_passage, only: %i[show result gist update]
 
   def show; end
 
-  def result; end
+  def result
+    return unless @test_passage.passing_result?
+
+    badges_service = BadgesService.new(@test_passage)
+    badges_service.call
+    return if badges_service.badges.empty?
+
+    flash.now[:success] = t('.flash_new_badge', badge: badges_service.badges.pluck(:name).join(','))
+  end
 
   def gist
     connection = GistQuestionService.new(@test_passage.current_question)
