@@ -8,6 +8,11 @@
     <strong><%= t('.level') %>:</strong>
     <%= test_level(@test) %>
   </p>
+
+  <p>
+    <strong><%= t('.timer') %>:</strong>
+    <%= @test.duration %> <%= t('.min') %>
+  </p>
   <a href="<%= new_admin_test_question_path(@test) %>" class="badge badge-success"><%= t('new_question') %></a>
   <a href="<%= edit_admin_test_path(@test) %>" class="badge badge-info"><%= t('edit') %></a>
 </div>

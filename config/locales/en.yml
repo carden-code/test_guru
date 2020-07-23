@@ -40,6 +40,7 @@ en:
   logo:                "Logo"
   rule:                "Rule"
   value:               "Value"
+  timer:               "Timer"
 
   helpers:
     submit:
@@ -100,6 +101,7 @@ en:
       total:           "Question: %{total}"
       next:            "Next"
       create_gist:     "Create Gist"
+      time:            "Timer"
     gist:
       success:         "Gist was successfully created! %{html_url}"
       danger:          "An error occurred while saving gist"
@@ -125,6 +127,8 @@ en:
       show:
         title:         "Title"
         level:         "Level"
+        timer:         "Timer"
+        min:           "min"
       create:
         success:       "Test was successfully created."
       update:

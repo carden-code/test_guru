@@ -33,4 +33,8 @@ class Test < ApplicationRecord
 
   # difficult - сложный (с пятого и выше).
   scope :hard, -> { where(level: (5..)) }
+
+  def timer?
+    duration.positive?
+  end
 end
