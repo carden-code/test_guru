@@ -11,9 +11,9 @@ class Test < ApplicationRecord
 
   # Проверка валидности атрибута level на то,
   # что level может быть только целым положительным числом меньше 10.
-  validates :level, numericality: { only_integer: true,
-                                    greater_than_or_equal_to: 0,
-                                    less_than_or_equal_to: 10 }
+  validates :level, :duration, numericality: { only_integer: true,
+                                               greater_than_or_equal_to: 0,
+                                               less_than_or_equal_to: 10 }
 
   # Возвращает отсортированный по убыванию массив названий всех Тестов у которых
   # Категория называется определённым образом.
