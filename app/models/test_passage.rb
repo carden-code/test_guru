@@ -53,8 +53,9 @@ class TestPassage < ApplicationRecord
     timer_in_seconds - duration_in_seconds
   end
 
-  def validate_timer
-    errors.add(:duration, I18n.t('timer')) if seconds_left.negative?
+  def time_out?
+    seconds_left.negative? if timer?
+    errors.add(:duration, I18n.t('timer'))
   end
 
   private

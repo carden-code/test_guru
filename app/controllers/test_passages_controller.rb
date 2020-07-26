@@ -29,7 +29,7 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.validate_timer if @test_passage.timer?
+    @test_passage.time_out?
 
     @test_passage.accept!(params[:answer_ids])
 
