@@ -13,8 +13,6 @@ class TestPassage < ApplicationRecord
   # Обратный вызов для определения следующего вопроса.
   before_validation :before_validation_set_next_question, on: :update
 
-  validate :validate_timer, on: :update, if: :timer?
-
   # Метод complited? проверяет пройден ли тест.
   def complited?
     current_question.nil?
@@ -55,11 +53,11 @@ class TestPassage < ApplicationRecord
     timer_in_seconds - duration_in_seconds
   end
 
-  private
-
   def validate_timer
     errors.add(:duration, I18n.t('timer')) if seconds_left.negative?
   end
+
+  private
 
   # Метод обратного вызова для определения текущего вопроса.
   def before_validation_set_first_question
