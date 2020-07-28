@@ -15,6 +15,13 @@
                       max: @test_passage.test.questions.size
                     } %>
   </div>
+
+  <% if @test_passage.seconds_left.positive? %>
+    <p>
+      <%= t('.time') %>: <%= content_tag :span, @test_passage.seconds_left, id: 'timer',
+                                         data: {seconds: @test_passage.seconds_left, test_passage_id: @test_passage.id} %>
+    </p>
+  <% end %>
 </div>
 
 <ul class="list-group">

@@ -44,6 +44,7 @@ ru:
   rule:                "Правило"
   value:               "Значение"
   flash_new_badge:     "Вы получили новый значёк. %{badge_name}"
+  timer:               "Таймер"
 
   helpers:
     submit:
@@ -107,6 +108,7 @@ ru:
       total:           "Вопрос: %{total}"
       next:            "Следующий"
       create_gist:     "Создать Gist"
+      time:            "Таймер"
     gist:
       success:         "Gist успешно сохранён! %{html_url}"
       danger:          "Во время сохранения gist произошла оибка!"
@@ -133,6 +135,8 @@ ru:
       show:
         title:         "Название"
         level:         "Уровень"
+        timer:         "Таймер"
+        min:           "мин"
       create:
         success:       "Тест успешно создан"
       update:

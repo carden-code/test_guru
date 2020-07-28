@@ -1,24 +1,36 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
 <%= render 'shared/errors', resource: @test %>
+  <div class="form-group">
+    <p>
+      <%= form.label t('.title') %><br>
+      <%= form.text_field :title, id: :test_title, class: 'form-control' %>
+    </p><br>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= form.label t('level') %><br>
+      <%= form.number_field :level, id: :test_level, class: 'form-control', min: 0 %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= form.label t('category_id') %>:
+      <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true, class: 'form-control' %>
+    </p>
+  </div>
 
-<p>
-  <%= form.label t('.title') %><br>
-  <%= form.text_field :title, id: :test_title %>
-</p><br>
+  <div class="form-group">
+     <%= form.label t('timer') %>
+     <%= form.number_field :duration, class: 'form-control', min: 0 %>
+   </div>
 
-<p>
-  <%= form.label t('level') %><br>
-  <%= form.number_field :level, id: :test_level %>
-</p>
+  <div class="form-group">
+    <p>
+      <%= form.hidden_field :author_id, :value => current_user.id, class: 'form-control' %>
+    </p>
+  </div>
 
-<p>
-  <%= form.label t('category_id') %>:
-  <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
-</p>
-
-<p>
-  <%= form.hidden_field :author_id, :value => current_user.id %>
-</p>
-
-<p><%= form.submit class: 'btn btn-info'%></p>
+  <div class="form-group">
+    <p><%= form.submit class: 'btn btn-info'%></p>
+  </div>
 <% end %>

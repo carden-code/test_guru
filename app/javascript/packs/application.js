@@ -12,6 +12,7 @@ require("../utilities/sorting")
 require("../utilities/password")
 require("../utilities/form_inline")
 require("../utilities/progressbar")
+require("../utilities/timer")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets

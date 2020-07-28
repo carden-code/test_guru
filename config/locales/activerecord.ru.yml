@@ -9,6 +9,7 @@ ru:
     attributes:
       test:
         title:        "Название"
+        timer:        "Минут на прохождение"
 
 
     errors:

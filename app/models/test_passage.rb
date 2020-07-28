@@ -37,6 +37,27 @@ class TestPassage < ApplicationRecord
     test.questions.where('id <= ?', current_question.id).count
   end
 
+  def timer?
+    test.duration.positive?
+  end
+
+  def timer_in_seconds
+    test.duration * 60
+  end
+
+  def duration_in_seconds
+    Time.zone.now - created_at
+  end
+
+  def seconds_left
+    timer_in_seconds - duration_in_seconds
+  end
+
+  def time_out?
+    timer?
+    errors.add(:duration, I18n.t('timer')) if seconds_left.negative?
+  end
+
   private
 
   # Метод обратного вызова для определения текущего вопроса.
