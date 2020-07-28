@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_test_passage
+  before_action :check_passing_time, only: :update
 
   def show; end
 
@@ -29,8 +30,6 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.time_out?
-
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.complited?
@@ -42,6 +41,12 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def check_passing_time
+    return unless @test_passage.time_out?
+
+    redirect_to result_test_passage_path(@test_passage)
+  end
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])
